@@ -60,12 +60,12 @@
      padding: 0;
      display: flex;
      background: #fff;
-     @media screen and(max-width :960px) {
+     @media screen and(max-width :1024px) {
          flex-direction: column;
      }
      .box{
          width: 50%;
-         @media screen and(max-width :960px) {
+         @media screen and(max-width :1024px) {
           width: 100%;
           margin-bottom: 20px;
          }
@@ -89,17 +89,19 @@
          .box-content{
              padding-left: 110px;
              padding-right: 110px;
-             @media screen and(max-width :1096px) {
+             
+             @media screen and(max-width :1140px) {
                  width: 90%;
-                 padding-left: 0;
-                 padding-right: 0;
+                 padding-left: 0!important;
+                 padding-right: 0!important;
              }
              display: flex;
              flex-direction: column;
              h1{
+                white-space: nowrap;
                  line-height: 50px;
                  font-size: 49px;
-                 @media screen and(max-width :640px) {
+                 @media screen and(max-width :1140px) {
                      font-size: 42px;
                  }
                  font-weight: bold;
