@@ -14,7 +14,7 @@ var replace = require('gulp-replace');
 
 // Make sure that v10.16.0 is used
 if (process.version !== 'v10.16.3') {
-    log.error('Wrong version of node! v10.16.0 is needed, current version: ' + process.version);
+    log.error('Wrong version of node! v10.16.3 is needed, current version: ' + process.version);
     process.exit();
 }
 
