@@ -1,0 +1,63 @@
+{# Variables:
+    - title
+    - box
+        - title
+        - content
+        - images_default
+            - large | medium | small
+                - url
+                - width
+                - height
+        - images
+            - url
+            - width
+            - height
+#}
+
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h1>{{ title }}</h1>
+<h2>{{ box.title }}</h2>
+<p>{{ box.content }}</p> -->
+
+<figure class="box box1">
+    <img id="task_img" class="img-fluid" src="{{ box.images_default.large.url }}" alt="">
+  </figure>
+  <div class="box box2">
+    <div class="box-content">
+      <h1> {{ box.title }} </h1>
+      <p>{{ box.content }}</p>
+      <div class="btn" title="Description" data-toggle="modal" data-target="#modal"  >Buttton</div>
+    </div>
+  </div>
+
+
+<!-- modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Modal Text
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Display all named images -->
+{% for size, image in box.images_default %}
+<!-- <figure >
+    <img src="{{ image.url }}" alt="" style="max-width: 250px" data-size="{{ image.width }}" >
+    <figcaption>Image size: {{ size }}, {{ image.width }}x{{ image.height }}px</figcaption>
+</figure> -->
+{% endfor %}
+<hr>
+{% endblock %}
